@@ -23,12 +23,12 @@ export default function LoadingScreen() {
     // Start exit animation
     const exitTimer = setTimeout(() => {
       setIsExiting(true);
-    }, 2200);
+    }, 2400);
 
-    // Remove from DOM
+    // Remove from DOM (longer delay for smooth transition)
     const removeTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 3500);
 
     return () => {
       clearTimeout(exitTimer);
