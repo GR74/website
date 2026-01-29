@@ -13,6 +13,26 @@
   transition: all 0.5s var(--ease-out-expo);
 }
 
+/* Localized light spotlight on card */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  );
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
 .content {
   position: relative;
   padding: 1.25rem;

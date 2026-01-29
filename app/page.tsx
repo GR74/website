@@ -1,10 +1,29 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import styles from '@/styles/Landing.module.css';
-import { ParticleField, MagneticButton, TiltCard, GlitchText, TextReveal } from '@/components/effects';
+import { ParticleField, MagneticButton, TiltCard, GlitchText, TextReveal, Magnetic } from '@/components/effects';
 
 export default function Landing() {
+  const mainRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!mainRef.current) return;
+      const { clientX, clientY } = e;
+      const { innerWidth, innerHeight } = window;
+      
+      const xPercent = (clientX / innerWidth - 0.5) * 4; // Max 2deg tilt
+      const yPercent = (clientY / innerHeight - 0.5) * -4;
+      
+      mainRef.current.style.transform = `perspective(1000px) rotateX(${yPercent}deg) rotateY(${xPercent}deg)`;
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   return (
     <div className={styles.container}>
       <ParticleField />
@@ -16,45 +35,59 @@ export default function Landing() {
         <div className={styles.orb3} />
       </div>
 
-      <main className={styles.main}>
+      <main ref={mainRef} className={styles.main} style={{ transition: 'transform 0.1s ease-out' }}>
         {/* Hero */}
         <div className={styles.hero}>
           <span className={`${styles.heroAnnotation} animate-up delay-3`}>start here</span>
           
           <h1 className={`${styles.name} animate-up delay-2`}>
-            <span className={styles.firstName}>Gowrish</span>
-            <GlitchText className={styles.lastName}>Rajagopal</GlitchText>
+            <Magnetic strength={0.2}>
+              <span className={styles.firstName}>Gowrish</span>
+            </Magnetic>
+            <Magnetic strength={0.3}>
+              <GlitchText className={styles.lastName}>Rajagopal</GlitchText>
+            </Magnetic>
           </h1>
           
           <div className={`${styles.roleContainer} animate-up delay-3`}>
             <div className={styles.roleLine} />
-            <span className={styles.role}>Researcher & Systems Builder</span>
+            <Magnetic strength={0.1}>
+              <span className={styles.role}>Researcher & Systems Builder</span>
+            </Magnetic>
             <div className={styles.roleLine} />
           </div>
 
           {/* Focus Areas */}
           <div className={`${styles.focusAreas} animate-up delay-4`}>
-            <div className={styles.focusItem}>
-              <span className={styles.focusIcon}>◇</span>
-              <span className={styles.focusText}>Computational Biology</span>
-            </div>
+            <Magnetic strength={0.15}>
+              <div className={styles.focusItem}>
+                <span className={styles.focusIcon}>◇</span>
+                <span className={styles.focusText}>Computational Biology</span>
+              </div>
+            </Magnetic>
             <span className={styles.focusDivider} />
-            <div className={styles.focusItem}>
-              <span className={styles.focusIcon}>◈</span>
-              <span className={styles.focusText}>Clinical AI</span>
-            </div>
+            <Magnetic strength={0.15}>
+              <div className={styles.focusItem}>
+                <span className={styles.focusIcon}>◈</span>
+                <span className={styles.focusText}>Clinical AI</span>
+              </div>
+            </Magnetic>
             <span className={styles.focusDivider} />
-            <div className={styles.focusItem}>
-              <span className={styles.focusIcon}>○</span>
-              <span className={styles.focusText}>Infrastructure</span>
-            </div>
+            <Magnetic strength={0.15}>
+              <div className={styles.focusItem}>
+                <span className={styles.focusIcon}>○</span>
+                <span className={styles.focusText}>Infrastructure</span>
+              </div>
+            </Magnetic>
           </div>
 
           {/* About Button */}
-          <Link href="/about" className={`${styles.aboutLink} animate-up delay-5`}>
-            <span>About me</span>
-            <span className={styles.aboutArrow}>→</span>
-          </Link>
+          <Magnetic strength={0.2}>
+            <Link href="/about" className={`${styles.aboutLink} animate-up delay-5`}>
+              <span>About me</span>
+              <span className={styles.aboutArrow}>→</span>
+            </Link>
+          </Magnetic>
         </div>
 
         {/* Navigation Grid */}

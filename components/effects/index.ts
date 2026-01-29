@@ -10,3 +10,6 @@ export { default as ParticleField } from './ParticleField';
 export { default as ScrollProgress } from './ScrollProgress';
 export { default as LoadingScreen } from './LoadingScreen';
 export { default as HUDOverlay } from './HUDOverlay';
+export { default as Atmosphere } from './Atmosphere';
+export { default as Magnetic } from './Magnetic';
+export { default as RevealOnScroll } from './RevealOnScroll';

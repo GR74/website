@@ -1,0 +1,84 @@
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Film Grain */
+.grain {
+  position: absolute;
+  inset: -200%;
+  background-image: url("https://res.cloudinary.com/dq7l82uqc/image/upload/v1671388913/noise_v9qc96.png");
+  opacity: 0.04;
+  animation: grain 8s steps(10) infinite;
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+/* Localized Ambient Light */
+.ambientLight {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle at center,
+    rgba(50, 212, 222, 0.05) 0%,
+    rgba(168, 85, 247, 0.03) 30%,
+    transparent 70%
+  );
+  filter: blur(60px);
+  will-change: transform;
+}
+
+/* Vignette */
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 20%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+/* Light Leaks */
+.lightLeak1 {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(circle, rgba(50, 212, 222, 0.05) 0%, transparent 70%);
+  filter: blur(100px);
+  animation: leak 20s ease-in-out infinite;
+}
+
+.lightLeak2 {
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.05) 0%, transparent 70%);
+  filter: blur(100px);
+  animation: leak 25s ease-in-out infinite reverse;
+}
+
+@keyframes leak {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(10%, 10%) scale(1.2); }
+}
+
