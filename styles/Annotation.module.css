@@ -1,0 +1,10 @@
+.annotation {
+  position: absolute;
+  font-family: var(--font-handwritten), cursive;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  opacity: var(--handwritten-opacity);
+  white-space: nowrap;
+  transform-origin: left center;
+}
+

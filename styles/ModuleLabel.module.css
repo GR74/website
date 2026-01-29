@@ -1,0 +1,13 @@
+.label {
+  position: absolute;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.55rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.2rem 0.4rem;
+  border: 1px solid var(--line-structural);
+  background-color: rgba(26, 26, 30, 0.8);
+}
+

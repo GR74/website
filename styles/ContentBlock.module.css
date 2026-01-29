@@ -1,0 +1,24 @@
+.block {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.block:last-child {
+  margin-bottom: 0;
+}
+
+.withAnchor {
+  padding-left: 1.5rem;
+}
+
+.anchorPoint {
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--system-cyan);
+  box-shadow: 0 0 8px var(--glow-dot);
+}
+

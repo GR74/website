@@ -1,0 +1,33 @@
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--system-cyan);
+  box-shadow: 0 0 8px var(--glow-dot);
+  transform: translate(-50%, -50%);
+}
+
+.small {
+  width: 4px;
+  height: 4px;
+}
+
+.medium {
+  width: 6px;
+  height: 6px;
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+    box-shadow: 0 0 6px var(--glow-dot);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 12px var(--glow-dot);
+  }
+}
+

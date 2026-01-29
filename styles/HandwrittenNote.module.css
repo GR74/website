@@ -1,0 +1,28 @@
+.note {
+  position: absolute;
+  font-family: var(--font-handwritten), 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: rgba(50, 212, 222, 0.6);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+.note::before {
+  content: '→ ';
+  opacity: 0.5;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) rotate(var(--rotate, 0deg));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--rotate, 0deg));
+  }
+}
+

@@ -1,0 +1,24 @@
+.container {
+  position: relative;
+  height: 100%;
+}
+
+.note {
+  position: absolute;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+  max-width: 200px;
+  padding-left: 1rem;
+  border-left: 1px solid var(--line-structural);
+}
+
+.note.handwritten {
+  font-family: var(--font-handwritten), cursive;
+  font-size: 0.9rem;
+  opacity: var(--handwritten-opacity);
+  color: var(--text-secondary);
+  border-left-color: transparent;
+  padding-left: 0;
+}
+

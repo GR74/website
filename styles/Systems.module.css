@@ -1,0 +1,347 @@
+/* Exo Featured */
+.featured {
+  margin-bottom: 1.5rem;
+}
+
+.exoCard {
+  position: relative;
+  padding: 1.5rem 0;
+  overflow: hidden;
+}
+
+.exoOrb {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 65%);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  animation: exoPulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes exoPulse {
+  0%, 100% { opacity: 0.5; transform: translateY(-50%) scale(1); }
+  50% { opacity: 0.9; transform: translateY(-50%) scale(1.15); }
+}
+
+.exoContent {
+  position: relative;
+  z-index: 1;
+}
+
+.exoBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--accent-purple);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.exoDot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-purple);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 10px var(--accent-purple);
+}
+
+.exoTitle {
+  font-size: 2.25rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-pink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.35rem;
+}
+
+.exoDesc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.exoAnnotation {
+  font-family: var(--font-handwritten), cursive;
+  font-size: 1.15rem;
+  color: rgba(168, 85, 247, 0.6);
+  font-weight: 500;
+}
+
+.exoPattern {
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exoLine {
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-purple), transparent);
+  animation: exoLineAnim 2s ease-in-out infinite;
+  border-radius: 1px;
+}
+
+.exoLine:nth-child(1) { width: 50px; animation-delay: 0s; }
+.exoLine:nth-child(2) { width: 35px; animation-delay: 0.2s; }
+.exoLine:nth-child(3) { width: 60px; animation-delay: 0.4s; }
+.exoLine:nth-child(4) { width: 25px; animation-delay: 0.6s; }
+.exoLine:nth-child(5) { width: 45px; animation-delay: 0.8s; }
+
+@keyframes exoLineAnim {
+  0%, 100% { opacity: 0.3; transform: scaleX(1); }
+  50% { opacity: 0.8; transform: scaleX(1.2); }
+}
+
+/* Section styling */
+.section {
+  margin-bottom: 1.25rem;
+}
+
+.sectionLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+  margin-bottom: 0.75rem;
+}
+
+.labelLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+}
+
+.orgHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.orgName {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.orgMeta {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  margin-top: 0.2rem;
+}
+
+.orgAnnotation {
+  font-family: var(--font-handwritten), cursive;
+  font-size: 1rem;
+  color: rgba(50, 212, 222, 0.5);
+  font-weight: 500;
+}
+
+.orgDesc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 0.75rem;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.projectItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.65rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.projectItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(168, 85, 247, 0.2);
+  transform: translateY(-2px);
+}
+
+.projectIcon {
+  font-size: 0.9rem;
+  color: var(--accent-purple);
+  margin-top: 0.1rem;
+  transition: all 0.3s ease;
+}
+
+.projectItem:hover .projectIcon {
+  transform: scale(1.2);
+  text-shadow: 0 0 10px var(--accent-purple);
+}
+
+.projectItem strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+}
+
+.projectItem span {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.techItem {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  padding: 0.3rem 0.6rem;
+  background: rgba(50, 212, 222, 0.08);
+  border: 1px solid rgba(50, 212, 222, 0.15);
+  border-radius: 4px;
+  color: var(--accent-cyan);
+  transition: all 0.3s ease;
+}
+
+.techItem:hover {
+  background: rgba(50, 212, 222, 0.15);
+  border-color: rgba(50, 212, 222, 0.3);
+}
+
+/* Award */
+.awardCard {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.awardLeft {
+  flex-shrink: 0;
+}
+
+.awardBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(50, 212, 222, 0.15), rgba(168, 85, 247, 0.15));
+  border: 1px solid rgba(50, 212, 222, 0.25);
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.awardBadge::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.awardRank {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: var(--accent-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.awardPlace {
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+  position: relative;
+  z-index: 1;
+}
+
+.awardContent {
+  flex: 1;
+}
+
+.awardEvent {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-cyan);
+}
+
+.awardTitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0.2rem 0;
+}
+
+.awardDesc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 10px var(--accent-purple); }
+  50% { opacity: 0.6; box-shadow: 0 0 20px var(--accent-purple); }
+}
+
+@media (max-width: 600px) {
+  .projectGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .exoPattern {
+    display: none;
+  }
+  
+  .orgAnnotation {
+    display: none;
+  }
+  
+  .awardCard {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,28 @@
+.bracket {
+  position: absolute;
+}
+
+.svg {
+  display: block;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.labelLeft {
+  right: calc(100% + 8px);
+}
+
+.labelRight {
+  left: calc(100% + 8px);
+}
+

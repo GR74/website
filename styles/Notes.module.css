@@ -1,0 +1,121 @@
+.notesList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.note {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.noteMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.noteDate {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.noteDate::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: var(--accent-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--accent-cyan);
+}
+
+.noteTag {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6rem;
+  padding: 0.2rem 0.5rem;
+  background: rgba(50, 212, 222, 0.1);
+  border: 1px solid rgba(50, 212, 222, 0.2);
+  border-radius: 4px;
+  color: var(--accent-cyan);
+  transition: all 0.3s ease;
+}
+
+.note:hover .noteTag {
+  background: rgba(50, 212, 222, 0.2);
+  border-color: rgba(50, 212, 222, 0.4);
+}
+
+.noteTitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+  line-height: 1.35;
+  transition: all 0.3s ease;
+}
+
+.note:hover .noteTitle {
+  color: var(--accent-cyan);
+}
+
+.noteContent {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.noteFooter {
+  margin-top: 0.75rem;
+}
+
+.noteLine {
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple), transparent);
+  opacity: 0.2;
+  transition: all 0.4s ease;
+  border-radius: 1px;
+}
+
+.note:hover .noteLine {
+  opacity: 0.6;
+}
+
+.disclaimer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.disclaimerAnnotation {
+  font-family: var(--font-handwritten), cursive;
+  font-size: 1.1rem;
+  color: rgba(50, 212, 222, 0.6);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.disclaimer p {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 700px) {
+  .notesList {
+    grid-template-columns: 1fr;
+  }
+  
+  .disclaimerAnnotation {
+    display: none;
+  }
+}
