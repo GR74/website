@@ -46,17 +46,25 @@ export default function LoadingScreen() {
       {/* Animated background */}
       <div className={styles.bgGradient} />
       
-      {/* Floating particles */}
+      {/* Floating particles - fixed positions to avoid hydration mismatch */}
       <div className={styles.particles}>
-        {[...Array(30)].map((_, i) => (
+        {[
+          { left: 5, top: 10 }, { left: 15, top: 80 }, { left: 25, top: 30 },
+          { left: 35, top: 60 }, { left: 45, top: 15 }, { left: 55, top: 85 },
+          { left: 65, top: 40 }, { left: 75, top: 70 }, { left: 85, top: 20 },
+          { left: 95, top: 50 }, { left: 10, top: 45 }, { left: 20, top: 75 },
+          { left: 30, top: 5 }, { left: 40, top: 90 }, { left: 50, top: 35 },
+          { left: 60, top: 65 }, { left: 70, top: 25 }, { left: 80, top: 55 },
+          { left: 90, top: 95 }, { left: 8, top: 68 },
+        ].map((pos, i) => (
           <div 
             key={i} 
             className={styles.particle}
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 2}s`,
-              animationDuration: `${3 + Math.random() * 4}s`,
+              left: `${pos.left}%`,
+              top: `${pos.top}%`,
+              animationDelay: `${(i % 5) * 0.4}s`,
+              animationDuration: `${3 + (i % 4)}s`,
             }}
           />
         ))}
