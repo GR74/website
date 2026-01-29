@@ -1,0 +1,247 @@
+.hud {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  color: rgba(50, 212, 222, 0.3);
+  overflow: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.hud.hidden {
+  opacity: 0;
+}
+
+/* Grid */
+.grid {
+  position: absolute;
+  inset: 0;
+}
+
+.gridLineV,
+.gridLineH {
+  position: absolute;
+  background: rgba(50, 212, 222, 0.03);
+}
+
+.gridLineV {
+  width: 1px;
+  height: 100%;
+  top: 0;
+}
+
+.gridLineH {
+  width: 100%;
+  height: 1px;
+  left: 0;
+}
+
+/* Corner brackets */
+.bracket {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  color: rgba(50, 212, 222, 0.4);
+}
+
+.bracket.tl { top: 20px; left: 20px; }
+.bracket.tr { top: 20px; right: 20px; }
+.bracket.bl { bottom: 20px; left: 20px; }
+.bracket.br { bottom: 20px; right: 20px; }
+
+/* Data readouts */
+.readoutTL,
+.readoutTR,
+.readoutBL {
+  position: absolute;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+}
+
+.readoutTL { top: 90px; left: 25px; }
+.readoutTR { top: 90px; right: 25px; text-align: right; }
+.readoutBL { bottom: 90px; left: 25px; }
+
+.readoutLine {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+  opacity: 0.6;
+}
+
+.label {
+  color: rgba(50, 212, 222, 0.5);
+}
+
+.value {
+  color: rgba(50, 212, 222, 0.8);
+}
+
+.statusDot {
+  width: 4px;
+  height: 4px;
+  background: #32d4de;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Scan lines */
+.scanLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(50, 212, 222, 0.3), transparent);
+  animation: scanV 8s linear infinite;
+}
+
+.scanLineH {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(168, 85, 247, 0.2), transparent);
+  animation: scanH 12s linear infinite;
+}
+
+@keyframes scanV {
+  0% { top: 0; opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@keyframes scanH {
+  0% { left: 0; opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+/* Target */
+.target {
+  position: absolute;
+  bottom: 15%;
+  right: 8%;
+  width: 120px;
+  height: 120px;
+  opacity: 0.3;
+}
+
+.targetRing1 {
+  animation: rotate 20s linear infinite;
+  transform-origin: center;
+}
+
+.targetRing2 {
+  animation: rotate 15s linear infinite reverse;
+  transform-origin: center;
+}
+
+.targetRing3 {
+  animation: rotate 10s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Hexagon pattern */
+.hexPattern {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80px;
+  gap: 5px;
+  opacity: 0.2;
+}
+
+.hex {
+  width: 25px;
+  height: 25px;
+  animation: hexPulse 3s ease-in-out infinite;
+}
+
+@keyframes hexPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* Arcs */
+.arcLeft,
+.arcRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 300px;
+  width: 60px;
+  opacity: 0.2;
+}
+
+.arcLeft { left: 0; }
+.arcRight { right: 0; }
+
+/* Connection nodes */
+.nodes {
+  position: absolute;
+  inset: 0;
+}
+
+.node {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  border: 1px solid rgba(50, 212, 222, 0.4);
+  border-radius: 50%;
+  animation: nodePulse 3s ease-in-out infinite;
+}
+
+.node::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 2px;
+  background: rgba(50, 212, 222, 0.6);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.node:nth-child(2) { animation-delay: 0.5s; }
+.node:nth-child(3) { animation-delay: 1s; }
+.node:nth-child(4) { animation-delay: 1.5s; }
+.node:nth-child(5) { animation-delay: 2s; }
+
+@keyframes nodePulse {
+  0%, 100% { 
+    transform: scale(1);
+    border-color: rgba(50, 212, 222, 0.4);
+  }
+  50% { 
+    transform: scale(1.5);
+    border-color: rgba(50, 212, 222, 0.8);
+  }
+}
+
+/* Responsive - hide on mobile */
+@media (max-width: 768px) {
+  .hud {
+    display: none;
+  }
+}
+

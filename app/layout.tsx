@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, JetBrains_Mono, Caveat } from "next/font/google";
-import { CustomCursor, LoadingScreen } from "@/components/effects";
+import { CustomCursor, LoadingScreen, HUDOverlay } from "@/components/effects";
 import "./globals.css";
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -40,6 +40,7 @@ export default function RootLayout({
         className={`${ibmPlexSans.variable} ${jetbrainsMono.variable} ${caveat.variable}`}
       >
         <LoadingScreen />
+        <HUDOverlay />
         <CustomCursor />
         {children}
       </body>

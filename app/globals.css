@@ -41,6 +41,22 @@ body {
   cursor: none !important;
 }
 
+/* Prevent flash of content before loading screen */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: #050506;
+  z-index: 99998;
+  pointer-events: none;
+  animation: hideOverlay 0.01s ease forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes hideOverlay {
+  to { opacity: 0; visibility: hidden; }
+}
+
 /* Hide cursor on all elements */
 *, *::before, *::after {
   cursor: none !important;
