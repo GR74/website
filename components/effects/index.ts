@@ -8,3 +8,4 @@ export { default as TextReveal } from './TextReveal';
 export { default as GlitchText } from './GlitchText';
 export { default as ParticleField } from './ParticleField';
 export { default as ScrollProgress } from './ScrollProgress';
+export { default as LoadingScreen } from './LoadingScreen';

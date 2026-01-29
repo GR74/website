@@ -1,0 +1,218 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #0a0a0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader.fadeOut {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Grid background */
+.grid {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10%;
+  opacity: 0.15;
+}
+
+.gridLine {
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--accent-cyan) 20%,
+    var(--accent-purple) 50%,
+    var(--accent-cyan) 80%,
+    transparent
+  );
+  animation: gridPulse 2s ease-in-out infinite;
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* Content */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  z-index: 1;
+}
+
+/* Logo */
+.logoContainer {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoRing {
+  position: absolute;
+  inset: 0;
+}
+
+.logoSvg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progressCircle {
+  transition: stroke-dashoffset 0.1s ease;
+}
+
+.initials {
+  font-size: 2rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #32d4de 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.1em;
+}
+
+/* Name */
+.nameContainer {
+  display: flex;
+  overflow: hidden;
+}
+
+.nameLetter {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: letterReveal 0.5s ease forwards;
+}
+
+.nameSpace {
+  width: 0.5rem;
+}
+
+@keyframes letterReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading bar */
+.loadingBar {
+  width: 200px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.loadingProgress {
+  height: 100%;
+  background: linear-gradient(90deg, #32d4de, #a855f7, #ec4899);
+  border-radius: 1px;
+  transition: width 0.1s ease;
+}
+
+/* Status */
+.statusText {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-cyan);
+  border-radius: 50%;
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Corner decorations */
+.cornerTL,
+.cornerBR {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(50, 212, 222, 0.2);
+}
+
+.cornerTL {
+  top: 40px;
+  left: 40px;
+  border-right: none;
+  border-bottom: none;
+  animation: cornerFadeIn 0.5s ease 0.2s forwards;
+  opacity: 0;
+}
+
+.cornerBR {
+  bottom: 40px;
+  right: 40px;
+  border-left: none;
+  border-top: none;
+  animation: cornerFadeIn 0.5s ease 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes cornerFadeIn {
+  to { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .nameLetter {
+    font-size: 1.2rem;
+  }
+  
+  .logoContainer {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .initials {
+    font-size: 1.5rem;
+  }
+  
+  .cornerTL,
+  .cornerBR {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .cornerTL {
+    top: 20px;
+    left: 20px;
+  }
+  
+  .cornerBR {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
