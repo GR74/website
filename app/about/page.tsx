@@ -49,7 +49,7 @@ export default function About() {
           <div className={styles.bio}>
             <p className={styles.lead}>
               Computer Science and Engineering at Ohio State. 
-              <span className={styles.highlight}> Minor in Biomedical Engineering.</span> Pre-medicine track. AI specialization.
+              <span className={styles.highlight}> Minor in Biomedical Engineering.</span> MD/PhD track. AI specialization.
             </p>
             <p>
               Research spans computational protein engineering, multimodal clinical AI, and neural signal processing. 
