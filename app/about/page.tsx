@@ -93,19 +93,17 @@ export default function About() {
 
           <div className={styles.skillsGrid}>
             {skillCategories.map((category, i) => (
-              <GlassCard key={category.title} glow className={`animate-up delay-${i + 5}`}>
-                <div className={styles.skillCategory}>
-                  <div className={styles.skillHeader}>
-                    <span className={`${styles.skillIcon} ${styles[category.color]}`}>{category.icon}</span>
-                    <h3 className={styles.skillTitle}>{category.title}</h3>
-                  </div>
-                  <div className={styles.skillList}>
-                    {category.skills.map((skill) => (
-                      <span key={skill} className={styles.skillPill}>{skill}</span>
-                    ))}
-                  </div>
+              <div key={category.title} className={`${styles.skillCategory} animate-up delay-${i + 5}`}>
+                <div className={styles.skillHeader}>
+                  <span className={`${styles.skillIcon} ${styles[category.color]}`}>{category.icon}</span>
+                  <h3 className={styles.skillTitle}>{category.title}</h3>
                 </div>
-              </GlassCard>
+                <div className={styles.skillList}>
+                  {category.skills.map((skill) => (
+                    <span key={skill} className={styles.skillPill}>{skill}</span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </section>
