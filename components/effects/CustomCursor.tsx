@@ -12,7 +12,7 @@ export default function CustomCursor() {
   const cursorPos = useRef({ x: 0, y: 0 });
   const ringPos = useRef({ x: 0, y: 0 });
   const isPointer = useRef(false);
-  const rafId = useRef<number>();
+  const rafId = useRef<number | null>(null);
 
   const lerp = (start: number, end: number, factor: number) => {
     return start + (end - start) * factor;
