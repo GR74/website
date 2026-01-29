@@ -72,7 +72,7 @@ export default function LoadingScreen() {
 
       {/* Center content */}
       <div className={styles.content}>
-        {/* Orbiting rings */}
+        {/* Orbiting rings behind logo */}
         <div className={styles.orbitContainer}>
           <div className={styles.orbit1}>
             <div className={styles.orbitDot} />
@@ -85,42 +85,10 @@ export default function LoadingScreen() {
           </div>
         </div>
 
-        {/* Logo */}
+        {/* Monogram only */}
         <div className={styles.logo}>
           <span className={styles.logoG}>G</span>
           <span className={styles.logoR}>R</span>
-        </div>
-
-        {/* Name with stagger */}
-        <div className={styles.nameWrapper}>
-          <div className={styles.nameLine}>
-            {'Gowrish'.split('').map((letter, i) => (
-              <span 
-                key={i} 
-                className={styles.letter}
-                style={{ animationDelay: `${0.8 + i * 0.05}s` }}
-              >
-                {letter}
-              </span>
-            ))}
-          </div>
-          <div className={styles.nameLine}>
-            {'Rajagopal'.split('').map((letter, i) => (
-              <span 
-                key={i} 
-                className={styles.letter}
-                style={{ animationDelay: `${1.2 + i * 0.05}s` }}
-              >
-                {letter}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Tagline */}
-        <div className={styles.tagline}>
-          <span className={styles.taglineText}>Research & Systems</span>
-          <div className={styles.taglineUnderline} />
         </div>
       </div>
 
