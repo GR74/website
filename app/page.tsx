@@ -49,6 +49,12 @@ export default function Landing() {
               <span className={styles.focusText}>Infrastructure</span>
             </div>
           </div>
+
+          {/* About Button */}
+          <Link href="/about" className={`${styles.aboutLink} animate-up delay-5`}>
+            <span>About me</span>
+            <span className={styles.aboutArrow}>→</span>
+          </Link>
         </div>
 
         {/* Navigation Grid */}
@@ -105,14 +111,7 @@ export default function Landing() {
         </nav>
 
         {/* Footer */}
-        <footer className={`${styles.footer} animate-up delay-9`}>
-          <MagneticButton href="/about" className={styles.aboutBtn}>
-            <span>About me</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </MagneticButton>
-
+        <footer className={`${styles.footer} animate-up delay-10`}>
           <div className={styles.footerLinks}>
             <MagneticButton href="mailto:gowrish.rajagopal@gmail.com" className={styles.footerLink}>
               Email
@@ -121,7 +120,7 @@ export default function Landing() {
             <MagneticButton href="https://linkedin.com/in/gowrishrajagopal" className={styles.footerLink}>
               LinkedIn
             </MagneticButton>
-        </div>
+          </div>
           
           <span className={styles.footerAnnotation}>~ work in progress ~</span>
         </footer>

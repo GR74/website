@@ -100,9 +100,6 @@ export default function HUDOverlay() {
         </div>
       </div>
 
-      {/* Scan lines */}
-      <div className={styles.scanLine} />
-      <div className={styles.scanLineH} />
 
       {/* Circular target */}
       <div className={styles.target}>
