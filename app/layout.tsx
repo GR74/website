@@ -27,6 +27,9 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   title: "Gowrish Rajagopal",
   description: "Research & Systems - Computational biology, Clinical AI, Infrastructure",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({

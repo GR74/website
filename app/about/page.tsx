@@ -1,7 +1,7 @@
 'use client';
 
 import { PageLayout, GlassCard } from '@/components/base';
-import { MagneticButton, TiltCard } from '@/components/effects';
+import { MagneticButton, TiltCard, HandwrittenNote } from '@/components/effects';
 import styles from '@/styles/About.module.css';
 
 const skillCategories = [
@@ -84,7 +84,14 @@ export default function About() {
         </div>
 
         {/* Skills Section */}
-        <section className={`${styles.skillsSection} animate-up delay-5`}>
+        <section className={`${styles.skillsSection} ${styles.skillsWithNote} animate-up delay-5`}>
+          <HandwrittenNote
+            text="tools change — systems persist"
+            x="calc(100% + 20px)"
+            y="10px"
+            rotate={-3}
+            delay={0.2}
+          />
           <div className={styles.sectionLabel}>
             <div className={styles.labelLine} />
             <span>Technical Skills</span>
