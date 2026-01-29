@@ -1,0 +1,15 @@
+.container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.letter {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), 
+              color 0.2s ease,
+              text-shadow 0.2s ease;
+  will-change: transform;
+  cursor: default;
+}
+

@@ -13,3 +13,8 @@ export { default as HUDOverlay } from './HUDOverlay';
 export { default as Atmosphere } from './Atmosphere';
 export { default as Magnetic } from './Magnetic';
 export { default as RevealOnScroll } from './RevealOnScroll';
+export { default as SmoothScroll } from './SmoothScroll';
+export { default as TextShimmer } from './TextShimmer';
+export { default as FloatingElement } from './FloatingElement';
+export { default as TextScramble } from './TextScramble';
+export { default as TextWave } from './TextWave';

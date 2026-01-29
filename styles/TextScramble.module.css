@@ -1,0 +1,12 @@
+.scramble {
+  display: inline-block;
+  cursor: default;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.scramble.active {
+  letter-spacing: 0.02em;
+  filter: drop-shadow(0 0 15px rgba(50, 212, 222, 0.6));
+}
+
