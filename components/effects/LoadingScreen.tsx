@@ -4,10 +4,22 @@ import { useEffect, useState } from 'react';
 import styles from '@/styles/LoadingScreen.module.css';
 
 export default function LoadingScreen() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
+    // Check if user has already seen loading screen this session
+    const hasSeenLoader = sessionStorage.getItem('hasSeenLoader');
+    
+    if (hasSeenLoader) {
+      setIsLoading(false);
+      return;
+    }
+
+    // First visit - show loading screen
+    setIsLoading(true);
+    sessionStorage.setItem('hasSeenLoader', 'true');
+
     // Start exit animation
     const exitTimer = setTimeout(() => {
       setIsExiting(true);
