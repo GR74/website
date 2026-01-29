@@ -102,6 +102,9 @@
 
 .skillsWithNote {
   position: relative;
+  /* Balanced framing for the handwritten note:
+     14px (top gap) + ~24px (note height) + 14px (bottom gap) ≈ 52px */
+  padding-top: 52px;
 }
 
 .sectionLabel {
@@ -125,6 +128,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.75rem;
+  margin-top: 0.5rem;
 }
 
 .skillCategory {

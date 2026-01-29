@@ -11,7 +11,15 @@ export default function HUDOverlay() {
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
-      setTime(now.toISOString().slice(11, 19));
+      // User-local time (respects locale + timezone)
+      setTime(
+        new Intl.DateTimeFormat(undefined, {
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false,
+        }).format(now)
+      );
     };
     updateTime();
     const interval = setInterval(updateTime, 1000);

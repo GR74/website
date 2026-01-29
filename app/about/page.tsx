@@ -71,8 +71,8 @@ export default function About() {
           </TiltCard>
           <TiltCard>
             <div className={styles.statCard}>
-              <span className={styles.statValue}>5+</span>
-              <span className={styles.statLabel}>Research Labs</span>
+              <span className={styles.statValue}>4</span>
+              <span className={styles.statLabel}>Concurrent Main Projects</span>
             </div>
           </TiltCard>
           <TiltCard>
@@ -87,8 +87,8 @@ export default function About() {
         <section className={`${styles.skillsSection} ${styles.skillsWithNote} animate-up delay-5`}>
           <HandwrittenNote
             text="tools change — systems persist"
-            x="calc(100% + 20px)"
-            y="10px"
+            x="16px"
+            y="14px"
             rotate={-3}
             delay={0.2}
           />
