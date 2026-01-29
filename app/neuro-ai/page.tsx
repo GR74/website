@@ -38,6 +38,25 @@ const sections = [
     ],
   },
   {
+    title: 'Neural Engineering',
+    institution: 'Ohio State NeuroTech Club',
+    location: '',
+    period: 'Aug 2024 – Present',
+    annotation: 'brain as system',
+    projects: [
+      {
+        name: 'ClearMind Neuro-Visualization',
+        desc: 'Brain metabolism mapping tools in collaboration with Dr. Douglas Rothman, Yale. First author on manuscript.',
+        role: 'Chief Scientific Officer',
+      },
+      {
+        name: 'Seizure Genesis Signature Framework',
+        desc: 'KillChain framework for localizing epileptogenic zones in MRI-negative FCD epilepsy using EEG and metabolic proxies.',
+        role: 'Framework Architect',
+      },
+    ],
+  },
+  {
     title: 'Oncology Research',
     institution: 'MD Anderson Cancer Center',
     location: 'Dept. of Radiation Oncology',
@@ -60,25 +79,6 @@ const sections = [
         name: "Parkinson's Gait Analysis",
         desc: "Pose estimation using MMPose for clinical gait pattern analysis in Parkinson's patients.",
         role: 'Computer Vision Analyst',
-      },
-    ],
-  },
-  {
-    title: 'Neural Engineering',
-    institution: 'Ohio State NeuroTech Club',
-    location: '',
-    period: 'Aug 2024 – Present',
-    annotation: 'brain as system',
-    projects: [
-      {
-        name: 'ClearMind Neuro-Visualization',
-        desc: 'Brain metabolism mapping tools in collaboration with Dr. Douglas Rothman, Yale. First author on manuscript.',
-        role: 'Chief Scientific Officer',
-      },
-      {
-        name: 'Seizure Genesis Signature Framework',
-        desc: 'KillChain framework for localizing epileptogenic zones in MRI-negative FCD epilepsy using EEG and metabolic proxies.',
-        role: 'Framework Architect',
       },
     ],
   },
